@@ -12,7 +12,7 @@ def hello_world():
 @app.route('/fetch', methods=['GET', 'POST'])
 def fetch():
     category_slug = request.args.get('slug')
-    url = 'https://tubitv.com/oz/containers/{}/content?limit=1000'.format(category_slug)
+    url = 'https://tubitv.com/oz/containers/{}/content?parentId&limit=1000'.format(category_slug)
     
     d = datetime.datetime.today()
 
