@@ -30,7 +30,7 @@ def fetch():
         except KeyError:
             data['contents'][j]['duration'] = 0
         print('{}.{}.{} | {} ({}) | {} | {} | {}\n'.format(d.year, d.month, d.day, data['contents'][j]['title'], data['contents'][j]['year'], datetime.timedelta(seconds=data['contents'][j]['duration']), str(tuple(data['contents'][j]['tags'])).replace('(', '').replace(')', ''), data['contents'][j]['ratings'][0]['value']), end="\n")
-        harvest += '{}.{}.{} | {} ({}) | {} | {} | {}<br>'.format(d.year, d.month, d.day, data['contents'][j]['title'], data['contents'][j]['year'], datetime.timedelta(seconds=data['contents'][j]['duration']), str(tuple(data['contents'][j]['tags'])).replace('(', '').replace(')', ''), data['contents'][j]['ratings'][0]['value'])
+        harvest += '{}.{}.{} | {} ({}) | {} | {} | {}<br>'.format(d.year, d.month, d.day, data['contents'][j]['title'], data['contents'][j]['year'], datetime.timedelta(seconds=data['contents'][j]['duration']), str(tuple(data['contents'][j]['tags'])).replace('(', '').replace(')', '').replace('\'', ''), data['contents'][j]['ratings'][0]['value'])
     harvest += '<script>alert("Batch Completed")</script>'
     
     return harvest
